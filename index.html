@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>G.T.V</title>
+    <style type="text/css">
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: #273746;
+        height: 100%;
+        align-items: center;
+      }
+      .title {
+        margin: 0;
+        text-align: center;
+        color: white;
+      }
+      .canvas-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .buttons-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 50%;
+      }
+      canvas {
+        background-color: black;
+      }
+      button {
+        padding: 1rem;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">
+        <span style="color: green">G</span>.raph
+        <span style="color: red">T</span>.raversal
+        <span style="color: yellow">V</span>.isualizer
+      </h1>
+      <div class="canvas-container">
+        <canvas></canvas>
+      </div>
+      <div class="buttons-container">
+        <button id="dfsButton">Start DFS</button>
+        <button id="bfsButton">Start BFS</button>
+        <button id="mazeButton">Generate Maze</button>
+        <button id="resetButton">Reset</button>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
