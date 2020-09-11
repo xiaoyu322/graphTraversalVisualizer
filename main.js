@@ -183,7 +183,7 @@ const showResultPath = (path) => {
 
 const drawCell = (row, col) => {
   c.beginPath();
-  c.lineWidth = "1";
+  c.lineWidth = "0.2";
   c.rect(
     col * cellWidth + 1,
     row * cellHeight + 1,
@@ -192,7 +192,7 @@ const drawCell = (row, col) => {
   );
   switch (data[row][col]) {
     case 3:
-      c.fillStyle = "yellow";
+      c.fillStyle = "#fae317"; //yellow
       break;
     case 2:
       c.fillStyle = "#3F88C5"; // deep blue
@@ -207,7 +207,7 @@ const drawCell = (row, col) => {
       c.fillStyle = "green";
       break;
     case -2:
-      c.fillStyle = "red";
+      c.fillStyle = "#f50f0f"; // red
       break;
     case -3:
       c.fillStyle = "black";
