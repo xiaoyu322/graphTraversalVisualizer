@@ -41,6 +41,23 @@
         padding: 1rem;
         font-weight: bold;
       }
+      .user-Instruction{
+        float: left;
+        width: 250px;
+        margin-top: -800px;
+        margin-left: 20px;
+        color: white;
+      }
+      .line{
+        padding: 10px;
+      }
+      h2{
+        margin-left: 30px;
+      }
+      a{
+        text-decoration: none;
+        color: black
+      }
     </style>
   </head>
   <body>
@@ -58,7 +75,18 @@
         <button id="bfsButton">Start BFS</button>
         <button id="mazeButton">Generate Maze</button>
         <button id="resetButton">Reset</button>
+        <!-- <button href="https://www.linkedin.com/in/xiao-yu-0a18449b/">Linkedin</button>
+        <button href="https://github.com/xiaoyu322">Github</button> -->
+        <button id="resetButton"><a  href="https://www.linkedin.com/in/xiao-yu-0a18449b/">Linkedin</a></button>
+        <button id="resetButton"><a  href="https://github.com/xiaoyu322">Github</a></button>
       </div>
+    </div>
+    <div class='user-Instruction'>
+      <h2>User Instruction</h2>
+      <li class='line'>Setting your starting point/ending point with drag and drop.</li>
+      <li class='line'>Choose DFS/BFS visualization.</li>
+      <li class='line'>Try generate!</li>
+      <li class='line'>Now, try generate maze to make the visualization more complicated!</li>
     </div>
     <script src="main.js"></script>
   </body>
