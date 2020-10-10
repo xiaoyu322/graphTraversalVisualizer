@@ -18,6 +18,11 @@ const main = () => {
 
 const boardInit = () => {
   console.log("boardInit start");
+
+  document.getElementById("dfsButton").disabled = false;
+  document.getElementById("bfsButton").disabled = false;
+  document.getElementById("mazeButton").disabled = false;
+
   data = Array.from(Array(maxRow), () => new Array(maxCol).fill(0));
   startRow = Math.floor(Math.random() * maxRow);
   startCol = Math.floor(Math.random() * maxCol);
@@ -83,11 +88,15 @@ const buttonsInit = () => {
     const resultPath = result[1];
     searchPath.shift();
     resultPath.shift();
-    showSearchPath(searchPath).then(() => {
-      setTimeout(() => {
-        showResultPath(resultPath);
-      }, 100);
-    });
+    showSearchPath(searchPath)
+      .then(() => {
+        document.getElementById("resetButton").disabled = false;
+      })
+      .then(() => {
+        setTimeout(() => {
+          showResultPath(resultPath);
+        }, 100);
+      });
   });
   document.getElementById("bfsButton").addEventListener("click", () => {
     console.log("bfs");
@@ -96,11 +105,15 @@ const buttonsInit = () => {
     const resultPath = result[1];
     searchPath.shift();
     resultPath.shift();
-    showSearchPath(searchPath).then(() => {
-      setTimeout(() => {
-        showResultPath(resultPath);
-      }, 100);
-    });
+    showSearchPath(searchPath)
+      .then(() => {
+        document.getElementById("resetButton").disabled = false;
+      })
+      .then(() => {
+        setTimeout(() => {
+          showResultPath(resultPath);
+        }, 100);
+      });
   });
   document.getElementById("mazeButton").addEventListener("click", () => {
     console.log("maze");
@@ -154,6 +167,10 @@ const setWall = (row, col) => {
 };
 
 const showSearchPath = (path) => {
+  document.getElementById("dfsButton").disabled = true;
+  document.getElementById("bfsButton").disabled = true;
+  document.getElementById("mazeButton").disabled = true;
+  document.getElementById("resetButton").disabled = true;
   const tasks = [];
   const update = (prev, curr, prevValue, currValue) =>
     new Promise((res) => {
